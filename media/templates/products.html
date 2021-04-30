@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+  }
+  .grid-item {
+  }
+  </style>
+</head>
+<body>
+    {% for product in products%}
+      <div class="grid-container">
+        <div class="grid-item">
+        {{product.title}}
+        </div> 
+      </div>
+    {% endfor %}
+</body>
+{% endblock  %}

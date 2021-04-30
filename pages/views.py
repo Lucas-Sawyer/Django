@@ -8,9 +8,5 @@ def home_view(request):
     return render(request, "index.html", {})
 
 
-def products_view(request):
-    return render(request, "products.html", {})
-
-
 def navbar_view(request):
-    return render(request, 'navbar.html', navbar_context)
+    return render(request, 'navbar.html', {})

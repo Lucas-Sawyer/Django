@@ -14,10 +14,10 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_URL = '/static/'
+STATIC_URL = BASE_DIR + '\media\static'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR + MEDIA_URL
-STATIC_ROOT = BASE_DIR + '/media/static/'
+MEDIA_ROOT = BASE_DIR + '\media'
+STATIC_ROOT = BASE_DIR + '\media\static'
 
 
 # Quick-start development settings - unsuitable for production
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'teste01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [Path.joinpath(BASE_DIR, "templates")],
+        'DIRS': [BASE_DIR + '/media/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'teste01.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR + '/db.sqlite3',
     }
 }
 
